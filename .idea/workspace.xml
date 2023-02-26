@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0baf103-1160-4b17-ba82-e8b1d0484401" name="Changes" comment="" />
+    <list default="true" id="b0baf103-1160-4b17-ba82-e8b1d0484401" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/domain/entity/AggregateRoot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/domain/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/domain/event/DomainEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/domain/valueObject/BaseId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/domain/valueObject/CustomerId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/domain/valueObject/Money.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/domain/valueObject/OrderId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/domain/valueObject/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/domain/valueObject/ProductId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/domain/valueObject/RestaurantId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/system/domain/valueObject/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-domain/src/main/java/com/food/ordering/system/domain/valueObject/Money.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-domain-core/src/main/java/com/food/ordering/system/system/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -30,15 +45,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-19",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
