@@ -15,7 +15,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.swing.text.html.Option;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -33,16 +32,20 @@ public class OrderCreateCommandHandler {
 
     private final OrderDataMapper orderDataMapper;
 
+    private final ApplicationDomainEventPublisher applicationDomainEventPublisher;
+
     public OrderCreateCommandHandler(OrderDomainService orderDomainService,
                                      OrderRepository orderRepository,
                                      CustomerRepository customerRepository,
                                      RestaurantRepository restaurantRepository,
-                                     OrderDataMapper orderDataMapper) {
+                                     OrderDataMapper orderDataMapper,
+                                     ApplicationDomainEventPublisher applicationDomainEventPublisher) {
         this.orderDomainService = orderDomainService;
         this.orderRepository = orderRepository;
         this.customerRepository = customerRepository;
         this.restaurantRepository = restaurantRepository;
         this.orderDataMapper = orderDataMapper;
+        this.applicationDomainEventPublisher = applicationDomainEventPublisher;
     }
 
     @Transactional
@@ -53,6 +56,7 @@ public class OrderCreateCommandHandler {
         OrderCreateEvent orderCreateEvent = orderDomainService.validateAndInitiateOrder(order, restaurant);
         Order orderResult =  saveOrder(order);
         log.info("Order is create with id {}", orderResult.getId().getValue());
+        applicationDomainEventPublisher.publish(orderCreateEvent);
         return orderDataMapper.orderToCreateOrderResponse(orderResult);
     }
 
@@ -79,7 +83,7 @@ public class OrderCreateCommandHandler {
         Order orderResult = orderRepository.save(order);
         if (orderResult == null) {
             log.error("Could not save order!");
-            thorw new OrderDomainException("Could not save the order!");
+            throw new OrderDomainException("Could not save the order!");
         }
         log.info("Order is saved with id {}", orderResult.getId().getValue());
         return orderResult ;
