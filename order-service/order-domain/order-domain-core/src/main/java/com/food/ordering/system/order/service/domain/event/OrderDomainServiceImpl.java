@@ -17,13 +17,13 @@ public class OrderDomainServiceImpl implements OrderDomainService {
     private static final String UTC = "UTC";
 
     @Override
-    public OrderCreateEvent validateAndInitiateOrder(Order order, Restaurant restaurant) {
+    public OrderCreatedEvent validateAndInitiateOrder(Order order, Restaurant restaurant) {
         validateRestaurant(restaurant);
         setOrderProductionInformation(order, restaurant);
         order.validateOrder();
         order.initialiseOrder();
         log.info("information with id {} is initiated", order.getId().getValue());
-        return new OrderCreateEvent(order, ZonedDateTime.now(ZoneId.of(UTC)));
+        return new OrderCreatedEvent(order, ZonedDateTime.now(ZoneId.of(UTC)));
     }
 
     @Override
@@ -40,10 +40,10 @@ public class OrderDomainServiceImpl implements OrderDomainService {
     }
 
     @Override
-    public OrderCancelledEvent cancelOrderPayment(Order order,List<String> failureMessages){
+    public OrderCancelledEvent cancelOrderPayment(Order order, List<String> failureMessages) {
         order.initCancel(failureMessages);
         log.info("Order payment is cancelling for order id {} ", order.getId().getValue());
-        return new OrderCancelledEvent(order,ZonedDateTime.now(ZoneId.of(UTC)));
+        return new OrderCancelledEvent(order, ZonedDateTime.now(ZoneId.of(UTC)));
     }
 
     @Override
@@ -53,7 +53,7 @@ public class OrderDomainServiceImpl implements OrderDomainService {
     }
 
     private void validateRestaurant(Restaurant restaurant) {
-        if(!restaurant.isActive()) {
+        if (!restaurant.isActive()) {
             throw new OrderDomainException("Domain with id " + restaurant.getId().getValue() +
                     " is not active");
         }
