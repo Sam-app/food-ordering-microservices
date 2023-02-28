@@ -87,7 +87,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
             return this;
         }
 
-        public Builder supTotal(Money val) {
+        public Builder subTotal(Money val) {
             supTotal = val;
             return this;
         }

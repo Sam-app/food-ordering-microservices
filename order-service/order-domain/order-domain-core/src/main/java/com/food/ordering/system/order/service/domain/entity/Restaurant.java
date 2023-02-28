@@ -28,14 +28,14 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
         private List<Product> products;
         private boolean active;
 
-        private Builder() {
+        public Builder() {
         }
 
         public static Builder builder() {
             return new Builder();
         }
 
-        public Builder restaurantID(RestaurantId val) {
+        public Builder restaurantId(RestaurantId val) {
             restaurantId = val;
             return this;
         }
