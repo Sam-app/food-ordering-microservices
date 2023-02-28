@@ -17,13 +17,13 @@ public class OrderDomainServiceImpl implements OrderDomainService {
     private static final String UTC = "UTC";
 
     @Override
-    public OrderCreateEvent validateAndInitiateOrder(Order order, Restaurant restaurant) {
+    public OrderCreatedEvent validateAndInitiateOrder(Order order, Restaurant restaurant) {
         validateRestaurant(restaurant);
         setOrderProductionInformation(order, restaurant);
         order.validateOrder();
         order.initialiseOrder();
         log.info("information with id {} is initiated", order.getId().getValue());
-        return new OrderCreateEvent(order, ZonedDateTime.now(ZoneId.of(UTC)));
+        return new OrderCreatedEvent(order, ZonedDateTime.now(ZoneId.of(UTC)));
     }
 
     @Override
