@@ -24,7 +24,7 @@ class OrderApplicationServiceImpl implements OrderApplicationService {
     }
 
     @Override
-    public CreateOrderResponse CreateOrder(CreateOrderCommand createOrderCommand) {
+    public CreateOrderResponse createOrder(CreateOrderCommand createOrderCommand) {
         return orderCreateCommandHandler.createOrder(createOrderCommand);
     }
 

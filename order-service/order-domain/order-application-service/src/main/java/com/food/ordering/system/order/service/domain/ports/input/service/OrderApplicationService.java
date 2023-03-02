@@ -8,6 +8,6 @@ import jakarta.validation.Valid;
 
 public interface OrderApplicationService {
 
-    CreateOrderResponse CreateOrder(@Valid CreateOrderCommand createOrderCommand);
+    CreateOrderResponse createOrder(@Valid CreateOrderCommand createOrderCommand);
     TrackOrderResponse trackOrder(@Valid TrackOrderQuery trackOrderQuery);
 }
